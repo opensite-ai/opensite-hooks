@@ -1,4 +1,4 @@
-![Opensite AI Utility Hooks](https://octane.cdn.ing/api/v1/images/transform?url=https://toastability-production.s3.amazonaws.com/gghtx0lxw9f2zigs427qc2phu024&q=85&f=avif)
+![Opensite AI Utility Hooks](https://octane.cdn.ing/api/v1/images/transform?url=https://cdn.ing/assets/i/r/285727/wzpwajm74s53htklhsst0kqgcrwt/opensite-react-hooks.png&q=90&f=webp)
 
 ---
 
