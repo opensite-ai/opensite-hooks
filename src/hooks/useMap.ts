@@ -1,2 +1,2 @@
-export { useMap } from "../core/useMap";
-export type { MapActions } from "../core/useMap";
+export { useMap } from "../core/useMap.js";
+export type { MapActions } from "../core/useMap.js";

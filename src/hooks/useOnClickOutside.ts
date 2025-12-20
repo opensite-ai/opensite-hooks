@@ -1,1 +1,1 @@
-export { useOnClickOutside } from "../core/useOnClickOutside";
+export { useOnClickOutside } from "../core/useOnClickOutside.js";

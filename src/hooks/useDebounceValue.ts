@@ -1,2 +1,2 @@
-export { useDebounceValue } from "../core/useDebounceValue";
-export type { DebounceOptions } from "../core/useDebounceCallback";
+export { useDebounceValue } from "../core/useDebounceValue.js";
+export type { DebounceOptions } from "../core/useDebounceCallback.js";

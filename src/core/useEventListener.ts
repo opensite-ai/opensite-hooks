@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react";
-import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect.js";
 
 type EventTargetLike = Window | Document | HTMLElement | null;
 type ElementRef = React.RefObject<HTMLElement>;
+
+const isRefObject = (value: unknown): value is ElementRef =>
+  !!value && typeof value === "object" && "current" in value;
 
 export function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
@@ -53,7 +56,11 @@ export function useEventListener(
           : null
         : isWindow || isDocument
         ? element
-        : element?.current ?? null;
+        : typeof HTMLElement !== "undefined" && element instanceof HTMLElement
+        ? element
+        : isRefObject(element)
+        ? element.current
+        : null;
 
     if (!target?.addEventListener) {
       return;

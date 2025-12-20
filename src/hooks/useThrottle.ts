@@ -1,2 +1,2 @@
-export { useThrottle } from "../core/useThrottle";
-export type { ThrottleOptions } from "../core/useThrottle";
+export { useThrottle } from "../core/useThrottle.js";
+export type { ThrottleOptions } from "../core/useThrottle.js";

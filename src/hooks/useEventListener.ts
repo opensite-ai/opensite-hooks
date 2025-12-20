@@ -1,1 +1,1 @@
-export { useEventListener } from "../core/useEventListener";
+export { useEventListener } from "../core/useEventListener.js";

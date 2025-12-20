@@ -7,4 +7,4 @@
  * @see https://github.com/opensite-ai/opensite-hooks
  */
 
-export * from "./core";
+export * from "./core/index.js";

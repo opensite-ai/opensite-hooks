@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect.js";
 
 export interface DebounceOptions {
   leading?: boolean;

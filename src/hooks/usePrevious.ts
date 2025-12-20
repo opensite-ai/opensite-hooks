@@ -1,1 +1,1 @@
-export { usePrevious } from "../core/usePrevious";
+export { usePrevious } from "../core/usePrevious.js";

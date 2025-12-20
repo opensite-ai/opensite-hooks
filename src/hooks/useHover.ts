@@ -1,1 +1,1 @@
-export { useHover } from "../core/useHover";
+export { useHover } from "../core/useHover.js";

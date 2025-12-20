@@ -1,42 +1,42 @@
-export { useBoolean } from "./useBoolean";
-export type { UseBooleanResult } from "./useBoolean";
+export { useBoolean } from "./useBoolean.js";
+export type { UseBooleanResult } from "./useBoolean.js";
 
-export { useDebounceCallback } from "./useDebounceCallback";
-export type { DebounceOptions, DebouncedCallback } from "./useDebounceCallback";
+export { useDebounceCallback } from "./useDebounceCallback.js";
+export type { DebounceOptions, DebouncedCallback } from "./useDebounceCallback.js";
 
-export { useDebounceValue } from "./useDebounceValue";
+export { useDebounceValue } from "./useDebounceValue.js";
 
-export { useLocalStorage } from "./useLocalStorage";
-export type { StorageOptions } from "./useLocalStorage";
+export { useLocalStorage } from "./useLocalStorage.js";
+export type { StorageOptions } from "./useLocalStorage.js";
 
-export { useSessionStorage } from "./useSessionStorage";
-export type { SessionStorageOptions } from "./useSessionStorage";
+export { useSessionStorage } from "./useSessionStorage.js";
+export type { SessionStorageOptions } from "./useSessionStorage.js";
 
-export { useOnClickOutside } from "./useOnClickOutside";
+export { useOnClickOutside } from "./useOnClickOutside.js";
 
-export { useMediaQuery } from "./useMediaQuery";
-export type { UseMediaQueryOptions } from "./useMediaQuery";
+export { useMediaQuery } from "./useMediaQuery.js";
+export type { UseMediaQueryOptions } from "./useMediaQuery.js";
 
-export { useEventListener } from "./useEventListener";
+export { useEventListener } from "./useEventListener.js";
 
-export { useIsClient } from "./useIsClient";
+export { useIsClient } from "./useIsClient.js";
 
-export { useCopyToClipboard } from "./useCopyToClipboard";
+export { useCopyToClipboard } from "./useCopyToClipboard.js";
 export type {
   UseCopyToClipboardOptions,
   CopyToClipboardResult,
-} from "./useCopyToClipboard";
+} from "./useCopyToClipboard.js";
 
-export { usePrevious } from "./usePrevious";
+export { usePrevious } from "./usePrevious.js";
 
-export { useThrottle } from "./useThrottle";
-export type { ThrottleOptions } from "./useThrottle";
+export { useThrottle } from "./useThrottle.js";
+export type { ThrottleOptions } from "./useThrottle.js";
 
-export { useResizeObserver } from "./useResizeObserver";
+export { useResizeObserver } from "./useResizeObserver.js";
 
-export { useHover } from "./useHover";
+export { useHover } from "./useHover.js";
 
-export { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
+export { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect.js";
 
-export { useMap } from "./useMap";
-export type { MapActions } from "./useMap";
+export { useMap } from "./useMap.js";
+export type { MapActions } from "./useMap.js";

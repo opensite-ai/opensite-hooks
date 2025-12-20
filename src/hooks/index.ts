@@ -1,42 +1,42 @@
-export { useBoolean } from "../core/useBoolean";
-export type { UseBooleanResult } from "../core/useBoolean";
+export { useBoolean } from "../core/useBoolean.js";
+export type { UseBooleanResult } from "../core/useBoolean.js";
 
-export { useDebounceCallback } from "../core/useDebounceCallback";
-export type { DebounceOptions, DebouncedCallback } from "../core/useDebounceCallback";
+export { useDebounceCallback } from "../core/useDebounceCallback.js";
+export type { DebounceOptions, DebouncedCallback } from "../core/useDebounceCallback.js";
 
-export { useDebounceValue } from "../core/useDebounceValue";
+export { useDebounceValue } from "../core/useDebounceValue.js";
 
-export { useLocalStorage } from "../core/useLocalStorage";
-export type { StorageOptions } from "../core/useLocalStorage";
+export { useLocalStorage } from "../core/useLocalStorage.js";
+export type { StorageOptions } from "../core/useLocalStorage.js";
 
-export { useSessionStorage } from "../core/useSessionStorage";
-export type { SessionStorageOptions } from "../core/useSessionStorage";
+export { useSessionStorage } from "../core/useSessionStorage.js";
+export type { SessionStorageOptions } from "../core/useSessionStorage.js";
 
-export { useOnClickOutside } from "../core/useOnClickOutside";
+export { useOnClickOutside } from "../core/useOnClickOutside.js";
 
-export { useMediaQuery } from "../core/useMediaQuery";
-export type { UseMediaQueryOptions } from "../core/useMediaQuery";
+export { useMediaQuery } from "../core/useMediaQuery.js";
+export type { UseMediaQueryOptions } from "../core/useMediaQuery.js";
 
-export { useEventListener } from "../core/useEventListener";
+export { useEventListener } from "../core/useEventListener.js";
 
-export { useIsClient } from "../core/useIsClient";
+export { useIsClient } from "../core/useIsClient.js";
 
-export { useCopyToClipboard } from "../core/useCopyToClipboard";
+export { useCopyToClipboard } from "../core/useCopyToClipboard.js";
 export type {
   UseCopyToClipboardOptions,
   CopyToClipboardResult,
-} from "../core/useCopyToClipboard";
+} from "../core/useCopyToClipboard.js";
 
-export { usePrevious } from "../core/usePrevious";
+export { usePrevious } from "../core/usePrevious.js";
 
-export { useThrottle } from "../core/useThrottle";
-export type { ThrottleOptions } from "../core/useThrottle";
+export { useThrottle } from "../core/useThrottle.js";
+export type { ThrottleOptions } from "../core/useThrottle.js";
 
-export { useResizeObserver } from "../core/useResizeObserver";
+export { useResizeObserver } from "../core/useResizeObserver.js";
 
-export { useHover } from "../core/useHover";
+export { useHover } from "../core/useHover.js";
 
-export { useIsomorphicLayoutEffect } from "../core/useIsomorphicLayoutEffect";
+export { useIsomorphicLayoutEffect } from "../core/useIsomorphicLayoutEffect.js";
 
-export { useMap } from "../core/useMap";
-export type { MapActions } from "../core/useMap";
+export { useMap } from "../core/useMap.js";
+export type { MapActions } from "../core/useMap.js";

@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect.js";
 
 type TargetElement<T extends Element> = React.RefObject<T> | T | null;
+
+const isRefObject = <T extends Element>(
+  value: unknown
+): value is React.RefObject<T> => !!value && typeof value === "object" && "current" in value;
 
 export function useResizeObserver<T extends Element>(
   target: TargetElement<T>,
@@ -24,7 +28,9 @@ export function useResizeObserver<T extends Element>(
     const element =
       typeof Element !== "undefined" && target instanceof Element
         ? target
-        : target?.current ?? null;
+        : isRefObject<T>(target)
+        ? target.current
+        : null;
     if (!element) {
       return;
     }

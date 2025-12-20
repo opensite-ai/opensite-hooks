@@ -1,1 +1,1 @@
-export { useIsClient } from "../core/useIsClient";
+export { useIsClient } from "../core/useIsClient.js";

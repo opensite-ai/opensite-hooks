@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DebounceOptions, useDebounceCallback } from "./useDebounceCallback";
+import { DebounceOptions, useDebounceCallback } from "./useDebounceCallback.js";
 
 export function useDebounceValue<T>(
   value: T,

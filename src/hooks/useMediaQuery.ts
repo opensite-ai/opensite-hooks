@@ -1,2 +1,2 @@
-export { useMediaQuery } from "../core/useMediaQuery";
-export type { UseMediaQueryOptions } from "../core/useMediaQuery";
+export { useMediaQuery } from "../core/useMediaQuery.js";
+export type { UseMediaQueryOptions } from "../core/useMediaQuery.js";

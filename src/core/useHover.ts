@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useEventListener } from "./useEventListener";
+import { useEventListener } from "./useEventListener.js";
 
 export function useHover<T extends HTMLElement>(
   ref: React.RefObject<T>
