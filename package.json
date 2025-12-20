@@ -1,13 +1,13 @@
 {
   "name": "@opensite/hooks",
-  "version": "0.0.1",
-  "description": "TODO",
+  "version": "0.1.0",
+  "description": "Performance-first React hooks for UI state, storage, events, and responsive behavior with tree-shakable exports.",
   "keywords": [
     "react",
     "hooks",
-    "optimization",
+    "performance",
     "utilities",
-    "seo",
+    "opensite",
     "tree-shakeable"
   ],
   "homepage": "https://github.com/opensite-ai/opensite-hooks#readme",
@@ -42,6 +42,171 @@
       "import": "./dist/core/index.js",
       "require": "./dist/core/index.cjs",
       "types": "./dist/core/index.d.ts"
+    },
+    "./hooks": {
+      "import": "./dist/hooks/index.js",
+      "require": "./dist/hooks/index.cjs",
+      "types": "./dist/hooks/index.d.ts"
+    },
+    "./core/useBoolean": {
+      "import": "./dist/core/useBoolean.js",
+      "require": "./dist/core/useBoolean.cjs",
+      "types": "./dist/core/useBoolean.d.ts"
+    },
+    "./hooks/useBoolean": {
+      "import": "./dist/hooks/useBoolean.js",
+      "require": "./dist/hooks/useBoolean.cjs",
+      "types": "./dist/hooks/useBoolean.d.ts"
+    },
+    "./core/useDebounceValue": {
+      "import": "./dist/core/useDebounceValue.js",
+      "require": "./dist/core/useDebounceValue.cjs",
+      "types": "./dist/core/useDebounceValue.d.ts"
+    },
+    "./hooks/useDebounceValue": {
+      "import": "./dist/hooks/useDebounceValue.js",
+      "require": "./dist/hooks/useDebounceValue.cjs",
+      "types": "./dist/hooks/useDebounceValue.d.ts"
+    },
+    "./core/useDebounceCallback": {
+      "import": "./dist/core/useDebounceCallback.js",
+      "require": "./dist/core/useDebounceCallback.cjs",
+      "types": "./dist/core/useDebounceCallback.d.ts"
+    },
+    "./hooks/useDebounceCallback": {
+      "import": "./dist/hooks/useDebounceCallback.js",
+      "require": "./dist/hooks/useDebounceCallback.cjs",
+      "types": "./dist/hooks/useDebounceCallback.d.ts"
+    },
+    "./core/useLocalStorage": {
+      "import": "./dist/core/useLocalStorage.js",
+      "require": "./dist/core/useLocalStorage.cjs",
+      "types": "./dist/core/useLocalStorage.d.ts"
+    },
+    "./hooks/useLocalStorage": {
+      "import": "./dist/hooks/useLocalStorage.js",
+      "require": "./dist/hooks/useLocalStorage.cjs",
+      "types": "./dist/hooks/useLocalStorage.d.ts"
+    },
+    "./core/useSessionStorage": {
+      "import": "./dist/core/useSessionStorage.js",
+      "require": "./dist/core/useSessionStorage.cjs",
+      "types": "./dist/core/useSessionStorage.d.ts"
+    },
+    "./hooks/useSessionStorage": {
+      "import": "./dist/hooks/useSessionStorage.js",
+      "require": "./dist/hooks/useSessionStorage.cjs",
+      "types": "./dist/hooks/useSessionStorage.d.ts"
+    },
+    "./core/useOnClickOutside": {
+      "import": "./dist/core/useOnClickOutside.js",
+      "require": "./dist/core/useOnClickOutside.cjs",
+      "types": "./dist/core/useOnClickOutside.d.ts"
+    },
+    "./hooks/useOnClickOutside": {
+      "import": "./dist/hooks/useOnClickOutside.js",
+      "require": "./dist/hooks/useOnClickOutside.cjs",
+      "types": "./dist/hooks/useOnClickOutside.d.ts"
+    },
+    "./core/useMediaQuery": {
+      "import": "./dist/core/useMediaQuery.js",
+      "require": "./dist/core/useMediaQuery.cjs",
+      "types": "./dist/core/useMediaQuery.d.ts"
+    },
+    "./hooks/useMediaQuery": {
+      "import": "./dist/hooks/useMediaQuery.js",
+      "require": "./dist/hooks/useMediaQuery.cjs",
+      "types": "./dist/hooks/useMediaQuery.d.ts"
+    },
+    "./core/useEventListener": {
+      "import": "./dist/core/useEventListener.js",
+      "require": "./dist/core/useEventListener.cjs",
+      "types": "./dist/core/useEventListener.d.ts"
+    },
+    "./hooks/useEventListener": {
+      "import": "./dist/hooks/useEventListener.js",
+      "require": "./dist/hooks/useEventListener.cjs",
+      "types": "./dist/hooks/useEventListener.d.ts"
+    },
+    "./core/useIsClient": {
+      "import": "./dist/core/useIsClient.js",
+      "require": "./dist/core/useIsClient.cjs",
+      "types": "./dist/core/useIsClient.d.ts"
+    },
+    "./hooks/useIsClient": {
+      "import": "./dist/hooks/useIsClient.js",
+      "require": "./dist/hooks/useIsClient.cjs",
+      "types": "./dist/hooks/useIsClient.d.ts"
+    },
+    "./core/useCopyToClipboard": {
+      "import": "./dist/core/useCopyToClipboard.js",
+      "require": "./dist/core/useCopyToClipboard.cjs",
+      "types": "./dist/core/useCopyToClipboard.d.ts"
+    },
+    "./hooks/useCopyToClipboard": {
+      "import": "./dist/hooks/useCopyToClipboard.js",
+      "require": "./dist/hooks/useCopyToClipboard.cjs",
+      "types": "./dist/hooks/useCopyToClipboard.d.ts"
+    },
+    "./core/usePrevious": {
+      "import": "./dist/core/usePrevious.js",
+      "require": "./dist/core/usePrevious.cjs",
+      "types": "./dist/core/usePrevious.d.ts"
+    },
+    "./hooks/usePrevious": {
+      "import": "./dist/hooks/usePrevious.js",
+      "require": "./dist/hooks/usePrevious.cjs",
+      "types": "./dist/hooks/usePrevious.d.ts"
+    },
+    "./core/useThrottle": {
+      "import": "./dist/core/useThrottle.js",
+      "require": "./dist/core/useThrottle.cjs",
+      "types": "./dist/core/useThrottle.d.ts"
+    },
+    "./hooks/useThrottle": {
+      "import": "./dist/hooks/useThrottle.js",
+      "require": "./dist/hooks/useThrottle.cjs",
+      "types": "./dist/hooks/useThrottle.d.ts"
+    },
+    "./core/useResizeObserver": {
+      "import": "./dist/core/useResizeObserver.js",
+      "require": "./dist/core/useResizeObserver.cjs",
+      "types": "./dist/core/useResizeObserver.d.ts"
+    },
+    "./hooks/useResizeObserver": {
+      "import": "./dist/hooks/useResizeObserver.js",
+      "require": "./dist/hooks/useResizeObserver.cjs",
+      "types": "./dist/hooks/useResizeObserver.d.ts"
+    },
+    "./core/useHover": {
+      "import": "./dist/core/useHover.js",
+      "require": "./dist/core/useHover.cjs",
+      "types": "./dist/core/useHover.d.ts"
+    },
+    "./hooks/useHover": {
+      "import": "./dist/hooks/useHover.js",
+      "require": "./dist/hooks/useHover.cjs",
+      "types": "./dist/hooks/useHover.d.ts"
+    },
+    "./core/useIsomorphicLayoutEffect": {
+      "import": "./dist/core/useIsomorphicLayoutEffect.js",
+      "require": "./dist/core/useIsomorphicLayoutEffect.cjs",
+      "types": "./dist/core/useIsomorphicLayoutEffect.d.ts"
+    },
+    "./hooks/useIsomorphicLayoutEffect": {
+      "import": "./dist/hooks/useIsomorphicLayoutEffect.js",
+      "require": "./dist/hooks/useIsomorphicLayoutEffect.cjs",
+      "types": "./dist/hooks/useIsomorphicLayoutEffect.d.ts"
+    },
+    "./core/useMap": {
+      "import": "./dist/core/useMap.js",
+      "require": "./dist/core/useMap.cjs",
+      "types": "./dist/core/useMap.d.ts"
+    },
+    "./hooks/useMap": {
+      "import": "./dist/hooks/useMap.js",
+      "require": "./dist/hooks/useMap.cjs",
+      "types": "./dist/hooks/useMap.d.ts"
     }
   },
   "scripts": {
@@ -62,9 +227,23 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^9.37.0",
+    "happy-dom": "^15.11.7",
+    "husky": "^9.1.7",
+    "terser": "^5.44.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.20",
+    "vitest": "^3.2.4"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "packageManager": "pnpm@10.24.0",
   "engines": {
     "node": ">=18.0.0",
