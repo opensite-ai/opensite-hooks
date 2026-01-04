@@ -16,7 +16,7 @@ A hook for detecting hover state on elements using pointer events.
 
 ```typescript
 import { useRef } from 'react';
-import { useHover } from '@opensite-ai/react-hooks';
+import { useHover } from '@opensite/hooks';
 
 function HoverCard() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ function HoverCard() {
 
 ```typescript
 import { useRef } from 'react';
-import { useHover } from '@opensite-ai/react-hooks';
+import { useHover } from '@opensite/hooks';
 
 function TooltipButton() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -64,7 +64,7 @@ function TooltipButton() {
 
 ```typescript
 import { useRef } from 'react';
-import { useHover } from '@opensite-ai/react-hooks';
+import { useHover } from '@opensite/hooks';
 
 function ImageThumbnail({ src, previewSrc }: { src: string; previewSrc: string }) {
   const imgRef = useRef<HTMLImageElement>(null);
@@ -101,7 +101,7 @@ function ImageThumbnail({ src, previewSrc }: { src: string; previewSrc: string }
 
 ```typescript
 import { useRef } from 'react';
-import { useHover } from '@opensite-ai/react-hooks';
+import { useHover } from '@opensite/hooks';
 
 function ActionCard() {
   const cardRef = useRef<HTMLDivElement>(null);

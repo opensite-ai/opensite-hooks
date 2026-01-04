@@ -14,7 +14,7 @@ A hook for managing boolean state with convenient helper methods.
 ### Basic Example
 
 ```typescript
-import { useBoolean } from '@opensite-ai/react-hooks';
+import { useBoolean } from '@opensite/hooks';
 
 function ToggleComponent() {
   const { value, toggle, setTrue, setFalse } = useBoolean(false);
@@ -33,7 +33,7 @@ function ToggleComponent() {
 ### Modal Example
 
 ```typescript
-import { useBoolean } from '@opensite-ai/react-hooks';
+import { useBoolean } from '@opensite/hooks';
 
 function ModalExample() {
   const { value: isOpen, setTrue: openModal, setFalse: closeModal } = useBoolean(false);
@@ -55,7 +55,7 @@ function ModalExample() {
 ### Form Validation Example
 
 ```typescript
-import { useBoolean } from '@opensite-ai/react-hooks';
+import { useBoolean } from '@opensite/hooks';
 
 function FormExample() {
   const { value: isValid, setTrue: markValid, setFalse: markInvalid } = useBoolean(false);

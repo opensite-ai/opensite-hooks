@@ -16,7 +16,7 @@ A hook for managing state synchronized with sessionStorage with automatic serial
 ### Basic Example
 
 ```typescript
-import { useSessionStorage } from '@opensite-ai/react-hooks';
+import { useSessionStorage } from '@opensite/hooks';
 
 function FormWizard() {
   const [step, setStep] = useSessionStorage('wizardStep', 1);
@@ -36,7 +36,7 @@ function FormWizard() {
 ### Form Draft Example
 
 ```typescript
-import { useSessionStorage } from '@opensite-ai/react-hooks';
+import { useSessionStorage } from '@opensite/hooks';
 
 interface FormData {
   name: string;
@@ -84,7 +84,7 @@ function ContactForm() {
 ### Search Filters Example
 
 ```typescript
-import { useSessionStorage } from '@opensite-ai/react-hooks';
+import { useSessionStorage } from '@opensite/hooks';
 
 interface SearchFilters {
   category: string;
@@ -125,7 +125,7 @@ function ProductSearch() {
 ### Tab State Example
 
 ```typescript
-import { useSessionStorage } from '@opensite-ai/react-hooks';
+import { useSessionStorage } from '@opensite/hooks';
 
 function TabbedInterface() {
   const [activeTab, setActiveTab] = useSessionStorage('activeTab', 'profile');
@@ -165,7 +165,7 @@ function TabbedInterface() {
 ### Custom Serialization Example
 
 ```typescript
-import { useSessionStorage } from '@opensite-ai/react-hooks';
+import { useSessionStorage } from '@opensite/hooks';
 
 function DateRangePicker() {
   const [dateRange, setDateRange] = useSessionStorage<[Date, Date]>(

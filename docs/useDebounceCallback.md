@@ -16,7 +16,7 @@ A hook for debouncing callback functions with advanced options for leading/trail
 ### Basic Example
 
 ```typescript
-import { useDebounceCallback } from '@opensite-ai/react-hooks';
+import { useDebounceCallback } from '@opensite/hooks';
 
 function SearchInput() {
   const { debouncedCallback } = useDebounceCallback(
@@ -40,7 +40,7 @@ function SearchInput() {
 ### With Leading Edge
 
 ```typescript
-import { useDebounceCallback } from '@opensite-ai/react-hooks';
+import { useDebounceCallback } from '@opensite/hooks';
 
 function ButtonClick() {
   const { debouncedCallback } = useDebounceCallback(
@@ -58,7 +58,7 @@ function ButtonClick() {
 ### With Cancel and Flush
 
 ```typescript
-import { useDebounceCallback } from '@opensite-ai/react-hooks';
+import { useDebounceCallback } from '@opensite/hooks';
 
 function FormInput() {
   const { debouncedCallback, cancel, flush } = useDebounceCallback(
@@ -82,7 +82,7 @@ function FormInput() {
 ### With Maximum Wait
 
 ```typescript
-import { useDebounceCallback } from '@opensite-ai/react-hooks';
+import { useDebounceCallback } from '@opensite/hooks';
 
 function AutoSave() {
   const { debouncedCallback } = useDebounceCallback(

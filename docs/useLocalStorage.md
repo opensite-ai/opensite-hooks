@@ -16,7 +16,7 @@ A hook for managing state synchronized with localStorage with automatic serializ
 ### Basic Example
 
 ```typescript
-import { useLocalStorage } from '@opensite-ai/react-hooks';
+import { useLocalStorage } from '@opensite/hooks';
 
 function ThemeToggle() {
   const [theme, setTheme] = useLocalStorage('theme', 'light');
@@ -32,7 +32,7 @@ function ThemeToggle() {
 ### Object Storage Example
 
 ```typescript
-import { useLocalStorage } from '@opensite-ai/react-hooks';
+import { useLocalStorage } from '@opensite/hooks';
 
 interface UserSettings {
   notifications: boolean;
@@ -78,7 +78,7 @@ function SettingsPanel() {
 ### Custom Serialization Example
 
 ```typescript
-import { useLocalStorage } from '@opensite-ai/react-hooks';
+import { useLocalStorage } from '@opensite/hooks';
 
 function DatePicker() {
   const [selectedDate, setSelectedDate] = useLocalStorage<Date>(
@@ -103,7 +103,7 @@ function DatePicker() {
 ### Shopping Cart Example
 
 ```typescript
-import { useLocalStorage } from '@opensite-ai/react-hooks';
+import { useLocalStorage } from '@opensite/hooks';
 
 interface CartItem {
   id: string;
@@ -143,7 +143,7 @@ function ShoppingCart() {
 ### With Function Updater
 
 ```typescript
-import { useLocalStorage } from '@opensite-ai/react-hooks';
+import { useLocalStorage } from '@opensite/hooks';
 
 function Counter() {
   const [count, setCount] = useLocalStorage('count', 0);

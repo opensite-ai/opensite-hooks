@@ -16,7 +16,7 @@ A hook for accessing the previous value of a state or prop.
 
 ```typescript
 import { useState } from 'react';
-import { usePrevious } from '@opensite-ai/react-hooks';
+import { usePrevious } from '@opensite/hooks';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -36,7 +36,7 @@ function Counter() {
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { usePrevious } from '@opensite-ai/react-hooks';
+import { usePrevious } from '@opensite/hooks';
 
 function SearchInput() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -63,7 +63,7 @@ function SearchInput() {
 
 ```typescript
 import { useEffect } from 'react';
-import { usePrevious } from '@opensite-ai/react-hooks';
+import { usePrevious } from '@opensite/hooks';
 
 function UserProfile({ userId }: { userId: string }) {
   const previousUserId = usePrevious(userId);
@@ -84,7 +84,7 @@ function UserProfile({ userId }: { userId: string }) {
 
 ```typescript
 import { useState } from 'react';
-import { usePrevious } from '@opensite-ai/react-hooks';
+import { usePrevious } from '@opensite/hooks';
 
 function Slider({ items }: { items: string[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,7 +114,7 @@ function Slider({ items }: { items: string[] }) {
 
 ```typescript
 import { useState } from 'react';
-import { usePrevious } from '@opensite-ai/react-hooks';
+import { usePrevious } from '@opensite/hooks';
 
 function FormField({ initialValue }: { initialValue: string }) {
   const [value, setValue] = useState(initialValue);
@@ -140,7 +140,7 @@ function FormField({ initialValue }: { initialValue: string }) {
 
 ```typescript
 import { useState } from 'react';
-import { usePrevious } from '@opensite-ai/react-hooks';
+import { usePrevious } from '@opensite/hooks';
 
 interface Settings {
   theme: string;

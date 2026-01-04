@@ -15,7 +15,7 @@ A hook for responsive design using CSS media queries with automatic updates.
 ### Basic Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function ResponsiveComponent() {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -35,7 +35,7 @@ function ResponsiveComponent() {
 ### Multiple Breakpoints Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function AdaptiveLayout() {
   const isMobile = useMediaQuery('(max-width: 640px)');
@@ -55,7 +55,7 @@ function AdaptiveLayout() {
 ### Dark Mode Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function ThemeProvider({ children }) {
   const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');
@@ -71,7 +71,7 @@ function ThemeProvider({ children }) {
 ### Orientation Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function OrientationAware() {
   const isPortrait = useMediaQuery('(orientation: portrait)');
@@ -91,7 +91,7 @@ function OrientationAware() {
 ### Print Styles Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function PrintableDocument() {
   const isPrint = useMediaQuery('print');
@@ -109,7 +109,7 @@ function PrintableDocument() {
 ### High DPI Detection Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function ImageComponent({ src, retinaScr }) {
   const isRetina = useMediaQuery('(min-resolution: 2dppx)');
@@ -123,7 +123,7 @@ function ImageComponent({ src, retinaScr }) {
 ### With Default Value (SSR)
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function SSRComponent() {
   const isMobile = useMediaQuery('(max-width: 768px)', {
@@ -141,7 +141,7 @@ function SSRComponent() {
 ### Reduced Motion Example
 
 ```typescript
-import { useMediaQuery } from '@opensite-ai/react-hooks';
+import { useMediaQuery } from '@opensite/hooks';
 
 function AnimatedComponent() {
   const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');

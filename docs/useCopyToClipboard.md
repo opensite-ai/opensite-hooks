@@ -15,7 +15,7 @@ A hook for copying text to the clipboard with automatic reset and browser compat
 ### Basic Example
 
 ```typescript
-import { useCopyToClipboard } from '@opensite-ai/react-hooks';
+import { useCopyToClipboard } from '@opensite/hooks';
 
 function CopyButton() {
   const { copy, copiedText, isSupported } = useCopyToClipboard();
@@ -37,7 +37,7 @@ function CopyButton() {
 ### Code Snippet Example
 
 ```typescript
-import { useCopyToClipboard } from '@opensite-ai/react-hooks';
+import { useCopyToClipboard } from '@opensite/hooks';
 
 function CodeSnippet({ code }: { code: string }) {
   const { copy, copiedText } = useCopyToClipboard({ resetDelay: 3000 });
@@ -56,7 +56,7 @@ function CodeSnippet({ code }: { code: string }) {
 ### Share Link Example
 
 ```typescript
-import { useCopyToClipboard } from '@opensite-ai/react-hooks';
+import { useCopyToClipboard } from '@opensite/hooks';
 
 function ShareButton() {
   const { copy, copiedText } = useCopyToClipboard({ resetDelay: 2000 });

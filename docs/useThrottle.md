@@ -16,7 +16,7 @@ A hook for throttling value changes with configurable leading and trailing edge 
 
 ```typescript
 import { useState } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function ScrollPosition() {
   const [scrollY, setScrollY] = useState(0);
@@ -36,7 +36,7 @@ function ScrollPosition() {
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function SearchWithThrottle() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -63,7 +63,7 @@ function SearchWithThrottle() {
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function WindowSize() {
   const [size, setSize] = useState({
@@ -96,7 +96,7 @@ function WindowSize() {
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function MouseTracker() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -123,7 +123,7 @@ function MouseTracker() {
 
 ```typescript
 import { useState } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function ButtonClicks() {
   const [clicks, setClicks] = useState(0);
@@ -147,7 +147,7 @@ function ButtonClicks() {
 
 ```typescript
 import { useState } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function InputField() {
   const [value, setValue] = useState('');
@@ -172,7 +172,7 @@ function InputField() {
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { useThrottle } from '@opensite-ai/react-hooks';
+import { useThrottle } from '@opensite/hooks';
 
 function LiveData() {
   const [data, setData] = useState(null);

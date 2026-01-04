@@ -57,7 +57,7 @@ export default defineConfig({
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useBoolean.ts
+// @opensite/hooks/src/core/useBoolean.ts
 export function useBoolean(defaultValue = false) {
   const [value, setValue] = useState(defaultValue)
 
@@ -92,7 +92,7 @@ onClick={setTrue} // 0 unnecessary re-renders
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useDebounceValue.ts
+// @opensite/hooks/src/core/useDebounceValue.ts
 export function useDebounceValue<T>(
   value: T,
   delay: number,
@@ -139,7 +139,7 @@ export function useDebounceValue<T>(
 
 **SSR-Safe Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useLocalStorage.ts
+// @opensite/hooks/src/core/useLocalStorage.ts
 export function useLocalStorage<T>(
   key: string,
   initialValue: T,
@@ -206,7 +206,7 @@ export function useLocalStorage<T>(
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useOnClickOutside.ts
+// @opensite/hooks/src/core/useOnClickOutside.ts
 export function useOnClickOutside<T extends HTMLElement>(
   ref: React.RefObject<T> | React.RefObject<T>[],
   handler: (event: MouseEvent | TouchEvent) => void,
@@ -244,7 +244,7 @@ export function useOnClickOutside<T extends HTMLElement>(
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useMediaQuery.ts
+// @opensite/hooks/src/core/useMediaQuery.ts
 export function useMediaQuery(
   query: string,
   options?: { defaultValue?: boolean }
@@ -292,7 +292,7 @@ export function useMediaQuery(
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useDebounceCallback.ts
+// @opensite/hooks/src/core/useDebounceCallback.ts
 export function useDebounceCallback<T extends (...args: any[]) => any>(
   callback: T,
   delay: number
@@ -338,7 +338,7 @@ export function useDebounceCallback<T extends (...args: any[]) => any>(
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useEventListener.ts
+// @opensite/hooks/src/core/useEventListener.ts
 export function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
   handler: (event: WindowEventMap[K]) => void,
@@ -380,7 +380,7 @@ export function useEventListener<K extends keyof WindowEventMap>(
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useIsClient.ts
+// @opensite/hooks/src/core/useIsClient.ts
 export function useIsClient() {
   const [isClient, setIsClient] = useState(false)
 
@@ -400,7 +400,7 @@ export function useIsClient() {
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useCopyToClipboard.ts
+// @opensite/hooks/src/core/useCopyToClipboard.ts
 export function useCopyToClipboard() {
   const [copiedText, setCopiedText] = useState<string | null>(null)
   const [isSupported] = useState(() =>
@@ -442,7 +442,7 @@ Similar to useLocalStorage but with sessionStorage API.
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/usePrevious.ts
+// @opensite/hooks/src/core/usePrevious.ts
 export function usePrevious<T>(value: T): T | undefined {
   const ref = useRef<T>()
 
@@ -480,7 +480,7 @@ export function usePrevious<T>(value: T): T | undefined {
 
 **Implementation:**
 ```typescript
-// @opensite/hooks/src/hooks/useIsomorphicLayoutEffect.ts
+// @opensite/hooks/src/core/useIsomorphicLayoutEffect.ts
 import { useEffect, useLayoutEffect } from 'react'
 
 export const useIsomorphicLayoutEffect =
@@ -499,7 +499,7 @@ The `@page-speed/forms` library uses `@legendapp/state` for reactive form state 
 
 **Implementation for Forms:**
 ```typescript
-// @opensite/hooks/src/hooks/useMap.ts
+// @opensite/hooks/src/core/useMap.ts
 export function useMap<K, V>(initialState?: Map<K, V> | [K, V][]) {
   const [map, setMap] = useState<Map<K, V>>(() => {
     if (initialState instanceof Map) return new Map(initialState)
@@ -611,7 +611,7 @@ utility-modules/
     ├── tsconfig.json
     └── src/
         ├── index.ts
-        └── hooks/
+        └── core/
             ├── useBoolean.ts
             ├── useDebounceValue.ts
             ├── useDebounceCallback.ts

@@ -16,7 +16,7 @@ A hook for attaching event listeners to DOM elements, window, or document with a
 ### Window Event Example
 
 ```typescript
-import { useEventListener } from '@opensite-ai/react-hooks';
+import { useEventListener } from '@opensite/hooks';
 
 function WindowSize() {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -36,7 +36,7 @@ function WindowSize() {
 
 ```typescript
 import { useRef } from 'react';
-import { useEventListener } from '@opensite-ai/react-hooks';
+import { useEventListener } from '@opensite/hooks';
 
 function ClickableBox() {
   const boxRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,7 @@ function ClickableBox() {
 ### Document Event Example
 
 ```typescript
-import { useEventListener } from '@opensite-ai/react-hooks';
+import { useEventListener } from '@opensite/hooks';
 
 function KeyboardShortcuts() {
   useEventListener('keydown', (event) => {
@@ -70,7 +70,7 @@ function KeyboardShortcuts() {
 
 ```typescript
 import { useRef } from 'react';
-import { useEventListener } from '@opensite-ai/react-hooks';
+import { useEventListener } from '@opensite/hooks';
 
 function ScrollableList() {
   const listRef = useRef<HTMLDivElement>(null);
@@ -96,7 +96,7 @@ function ScrollableList() {
 
 ```typescript
 import { useRef } from 'react';
-import { useEventListener } from '@opensite-ai/react-hooks';
+import { useEventListener } from '@opensite/hooks';
 
 function InteractiveElement() {
   const elementRef = useRef<HTMLDivElement>(null);

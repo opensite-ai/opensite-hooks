@@ -17,7 +17,7 @@ A hook for observing element size changes using the ResizeObserver API.
 
 ```typescript
 import { useRef } from 'react';
-import { useResizeObserver } from '@opensite-ai/react-hooks';
+import { useResizeObserver } from '@opensite/hooks';
 
 function ResizableBox() {
   const boxRef = useRef<HTMLDivElement>(null);
@@ -46,7 +46,7 @@ function ResizableBox() {
 
 ```typescript
 import { useRef } from 'react';
-import { useResizeObserver } from '@opensite-ai/react-hooks';
+import { useResizeObserver } from '@opensite/hooks';
 
 function ResponsiveComponent() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,7 +76,7 @@ function ResponsiveComponent() {
 
 ```typescript
 import { useRef, useEffect } from 'react';
-import { useResizeObserver } from '@opensite-ai/react-hooks';
+import { useResizeObserver } from '@opensite/hooks';
 
 function Chart() {
   const chartRef = useRef<HTMLDivElement>(null);
@@ -105,7 +105,7 @@ function Chart() {
 
 ```typescript
 import { useRef, useState } from 'react';
-import { useResizeObserver } from '@opensite-ai/react-hooks';
+import { useResizeObserver } from '@opensite/hooks';
 
 function ResponsiveText() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -130,7 +130,7 @@ function ResponsiveText() {
 
 ```typescript
 import { useRef, useState } from 'react';
-import { useResizeObserver } from '@opensite-ai/react-hooks';
+import { useResizeObserver } from '@opensite/hooks';
 
 function ResponsiveGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -168,7 +168,7 @@ function ResponsiveGrid() {
 
 ```typescript
 import { useRef } from 'react';
-import { useResizeObserver } from '@opensite-ai/react-hooks';
+import { useResizeObserver } from '@opensite/hooks';
 
 function BorderBoxObserver() {
   const elementRef = useRef<HTMLDivElement>(null);

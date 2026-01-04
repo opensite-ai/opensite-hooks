@@ -1,79 +1,225 @@
 ![Opensite AI Utility Hooks](https://octane.cdn.ing/api/v1/images/transform?url=https://cdn.ing/assets/i/r/285728/knsbi168qz1imlat2aq042c10rw8/opensite-react-hooks.png&q=90&f=webp)
 
-# OpenSite React Hooks Library
+# @opensite/hooks
 
-High-performance React hooks for state management, storage, and more.
+Performance-first React hooks for UI state, storage, events, and responsive behavior.
+
+[![npm version](https://img.shields.io/npm/v/@opensite/hooks.svg)](https://www.npmjs.com/package/@opensite/hooks)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@opensite/hooks)](https://bundlephobia.com/package/@opensite/hooks)
+[![license](https://img.shields.io/npm/l/@opensite/hooks.svg)](./LICENSE)
 
 ## Overview
 
-The OpenSite React Hooks Library provides a suite of high-performance hooks designed to enhance React applications with efficient state management, storage, and event handling capabilities. This library is part of OpenSite AI's open-source ecosystem, emphasizing modularity, performance, and developer-friendly design. Learn more at [OpenSite AI](https://opensite.ai).
+`@opensite/hooks` provides a suite of zero-dependency, tree-shakable React hooks designed for high-performance marketing sites and web applications. All hooks are SSR-safe and optimized for Core Web Vitals.
 
-## Key Features
+**Key Features:**
 
-- **Performance-Optimized Hooks**: Built to ensure minimal impact on your application's performance.
-- **Modular Design**: Use only what you need with tree-shakable exports and hook-level entry points.
-- **SEO-Friendly**: Designed with best practices to ensure high performance and accessibility.
-- **Wide Range of Capabilities**: Includes hooks for event handling, storage management, responsive utilities, and more.
+- 🚀 **Zero dependencies** – Only React as a peer dependency
+- 🌳 **Tree-shakable** – Import only what you use with flat exports
+- 🔒 **SSR-safe** – All hooks handle server-side rendering correctly
+- ⚡ **Performance-first** – Memoized callbacks, minimal re-renders
+- 📦 **Multiple formats** – ESM, CJS, and UMD builds included
 
 ## Installation
 
-To use the OpenSite React Hooks Library, ensure you have Node.js installed. Then, add the library to your project:
+```bash
+# npm
+npm install @opensite/hooks
 
+# pnpm
+pnpm add @opensite/hooks
+
+# yarn
+yarn add @opensite/hooks
 ```
-npm install @opensite-ai/react-hooks
+
+### Requirements
+
+- React 17.0.0 or higher
+- React DOM 17.0.0 or higher
+
+## Quick Start
+
+### Barrel Import
+
+Import multiple hooks from the main entry point:
+
+```typescript
+import { useBoolean, useLocalStorage, useMediaQuery } from '@opensite/hooks';
 ```
 
-### Dependencies
+### Direct Import (Recommended for Bundle Size)
 
-- React and React DOM (version 16.8 or higher)
+Import individual hooks for optimal tree-shaking:
 
+```typescript
+import { useBoolean } from '@opensite/hooks/useBoolean';
+import { useLocalStorage } from '@opensite/hooks/useLocalStorage';
+import { useMediaQuery } from '@opensite/hooks/useMediaQuery';
+```
+
+### CDN Usage (UMD)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@opensite/hooks/dist/browser/opensite-hooks.umd.js"></script>
+<script>
+  const { useBoolean, useDebounceValue } = window.OpensiteHooks;
+</script>
+```
 
 ## Available Hooks
 
-| Hook | Description | Documentation |
-|------|-------------|---------------|
-| [useBoolean](./docs/useBoolean.md) | Manage boolean state with convenient helper methods | [View Docs](./docs/useBoolean.md) |
-| [useCopyToClipboard](./docs/useCopyToClipboard.md) | Copy text to clipboard with automatic reset and browser compatibility | [View Docs](./docs/useCopyToClipboard.md) |
-| [useDebounceCallback](./docs/useDebounceCallback.md) | Debounce callback functions with advanced options | [View Docs](./docs/useDebounceCallback.md) |
-| [useDebounceValue](./docs/useDebounceValue.md) | Debounce state values with configurable delay | [View Docs](./docs/useDebounceValue.md) |
-| [useEventListener](./docs/useEventListener.md) | Attach event listeners to DOM elements with automatic cleanup | [View Docs](./docs/useEventListener.md) |
-| [useHover](./docs/useHover.md) | Detect hover state on elements using pointer events | [View Docs](./docs/useHover.md) |
-| [useIsClient](./docs/useIsClient.md) | Detect if code is running on client-side or server-side | [View Docs](./docs/useIsClient.md) |
-| [useIsomorphicLayoutEffect](./docs/useIsomorphicLayoutEffect.md) | SSR-safe layout effect hook | [View Docs](./docs/useIsomorphicLayoutEffect.md) |
-| [useLocalStorage](./docs/useLocalStorage.md) | Manage state synchronized with localStorage | [View Docs](./docs/useLocalStorage.md) |
-| [useMap](./docs/useMap.md) | Manage Map state with convenient helper methods | [View Docs](./docs/useMap.md) |
-| [useMediaQuery](./docs/useMediaQuery.md) | Responsive design using CSS media queries | [View Docs](./docs/useMediaQuery.md) |
-| [useOnClickOutside](./docs/useOnClickOutside.md) | Detect clicks outside of specified elements | [View Docs](./docs/useOnClickOutside.md) |
-| [usePrevious](./docs/usePrevious.md) | Access the previous value of a state or prop | [View Docs](./docs/usePrevious.md) |
-| [useResizeObserver](./docs/useResizeObserver.md) | Observe element size changes using ResizeObserver API | [View Docs](./docs/useResizeObserver.md) |
-| [useSessionStorage](./docs/useSessionStorage.md) | Manage state synchronized with sessionStorage | [View Docs](./docs/useSessionStorage.md) |
-| [useThrottle](./docs/useThrottle.md) | Throttle value changes with configurable options | [View Docs](./docs/useThrottle.md) |
+| Hook | Description | Docs |
+|------|-------------|------|
+| **State Management** | | |
+| [`useBoolean`](./docs/useBoolean.md) | Boolean state with toggle, setTrue, setFalse helpers | [View](./docs/useBoolean.md) |
+| [`useMap`](./docs/useMap.md) | Map state with set, remove, clear helpers | [View](./docs/useMap.md) |
+| [`usePrevious`](./docs/usePrevious.md) | Access the previous value of a state or prop | [View](./docs/usePrevious.md) |
+| **Storage** | | |
+| [`useLocalStorage`](./docs/useLocalStorage.md) | Synchronized state with localStorage + cross-tab sync | [View](./docs/useLocalStorage.md) |
+| [`useSessionStorage`](./docs/useSessionStorage.md) | Synchronized state with sessionStorage | [View](./docs/useSessionStorage.md) |
+| **Timing** | | |
+| [`useDebounceValue`](./docs/useDebounceValue.md) | Debounce value changes with configurable delay | [View](./docs/useDebounceValue.md) |
+| [`useDebounceCallback`](./docs/useDebounceCallback.md) | Debounce callbacks with cancel/flush controls | [View](./docs/useDebounceCallback.md) |
+| [`useThrottle`](./docs/useThrottle.md) | Throttle value changes with leading/trailing options | [View](./docs/useThrottle.md) |
+| **DOM & Events** | | |
+| [`useEventListener`](./docs/useEventListener.md) | Attach event listeners with automatic cleanup | [View](./docs/useEventListener.md) |
+| [`useOnClickOutside`](./docs/useOnClickOutside.md) | Detect clicks outside specified elements | [View](./docs/useOnClickOutside.md) |
+| [`useHover`](./docs/useHover.md) | Detect hover state using pointer events | [View](./docs/useHover.md) |
+| [`useResizeObserver`](./docs/useResizeObserver.md) | Observe element size changes | [View](./docs/useResizeObserver.md) |
+| **Responsive** | | |
+| [`useMediaQuery`](./docs/useMediaQuery.md) | Reactive CSS media query matching | [View](./docs/useMediaQuery.md) |
+| **Utilities** | | |
+| [`useCopyToClipboard`](./docs/useCopyToClipboard.md) | Copy text to clipboard with feedback state | [View](./docs/useCopyToClipboard.md) |
+| [`useIsClient`](./docs/useIsClient.md) | Detect client-side vs server-side rendering | [View](./docs/useIsClient.md) |
+| [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) | SSR-safe useLayoutEffect | [View](./docs/useIsomorphicLayoutEffect.md) |
 
-## Configuration or Advanced Usage
+## Examples
 
-Customize the behavior of `useThrottle` with various options:
+### useBoolean
 
-```javascript
-import { useThrottle } from '@opensite-ai/react-hooks';
+```typescript
+import { useBoolean } from '@opensite/hooks/useBoolean';
 
-const throttledValue = useThrottle(value, 300, { leading: true, trailing: false });
+function Modal() {
+  const { value: isOpen, setTrue: open, setFalse: close, toggle } = useBoolean(false);
+
+  return (
+    <>
+      <button onClick={open}>Open Modal</button>
+      {isOpen && (
+        <dialog open>
+          <p>Modal content</p>
+          <button onClick={close}>Close</button>
+        </dialog>
+      )}
+    </>
+  );
+}
 ```
 
-## Performance Notes
+### useDebounceValue
 
-Performance is a core facet of everything we build. The OpenSite React Hooks Library makes use of advanced techniques to optimize rendering and state updates, ensuring that your applications remain fast and responsive.
+```typescript
+import { useState } from 'react';
+import { useDebounceValue } from '@opensite/hooks/useDebounceValue';
+
+function SearchInput() {
+  const [query, setQuery] = useState('');
+  const debouncedQuery = useDebounceValue(query, 300);
+
+  // API call only triggers when debouncedQuery changes
+  useEffect(() => {
+    if (debouncedQuery) {
+      searchAPI(debouncedQuery);
+    }
+  }, [debouncedQuery]);
+
+  return <input value={query} onChange={(e) => setQuery(e.target.value)} />;
+}
+```
+
+### useMediaQuery
+
+```typescript
+import { useMediaQuery } from '@opensite/hooks/useMediaQuery';
+
+function ResponsiveComponent() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');
+
+  return (
+    <div className={prefersDark ? 'dark' : 'light'}>
+      {isMobile ? <MobileNav /> : <DesktopNav />}
+    </div>
+  );
+}
+```
+
+### useLocalStorage
+
+```typescript
+import { useLocalStorage } from '@opensite/hooks/useLocalStorage';
+
+function ThemeToggle() {
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Current: {theme}
+    </button>
+  );
+}
+```
+
+## Migration from v1.x
+
+Version 2.0.0 simplifies import paths. Update your imports:
+
+```diff
+- import { useBoolean } from '@opensite/hooks/core/useBoolean';
+- import { useBoolean } from '@opensite/hooks/hooks/useBoolean';
++ import { useBoolean } from '@opensite/hooks/useBoolean';
+```
+
+The `/core/*` and `/hooks/*` paths have been removed. Use flat paths (`/useBoolean`) or barrel imports (`@opensite/hooks`) instead.
+
+## TypeScript
+
+All hooks are written in TypeScript and include full type definitions. Types are exported alongside hooks:
+
+```typescript
+import { useBoolean, type UseBooleanResult } from '@opensite/hooks/useBoolean';
+import { useLocalStorage, type StorageOptions } from '@opensite/hooks/useLocalStorage';
+```
 
 ## Contributing
 
-We welcome contributions from the community. For contribution guidelines, visit our [GitHub repository](https://github.com/opensite-ai).
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
+
+```bash
+# Clone the repo
+git clone https://github.com/opensite-ai/opensite-hooks.git
+cd opensite-hooks
+
+# Install dependencies
+pnpm install
+
+# Run tests
+pnpm test
+
+# Build
+pnpm build
+```
 
 ## License
 
-This project is licensed under the BSD 3-Clause License. See the [LICENSE](./LICENSE) file for more details.
+[BSD-3-Clause](./LICENSE) © [OpenSite AI](https://opensite.ai)
 
 ## Related Projects
 
-- [OpenSite Domain Extractor](https://github.com/opensite-ai/domain_extractor): A high-performance Rust utility for domain extraction.
-- [OpenSite Page Speed Hooks](https://github.com/opensite-ai/page-speed-hooks): Tools to enhance page load performance.
+- [@opensite/ui](https://github.com/opensite-ai/opensite-ui) – React component library for OpenSite
+- [@opensite/blocks](https://github.com/opensite-ai/opensite-blocks) – Semantic page blocks for site builders
+- [@page-speed/forms](https://github.com/opensite-ai/page-speed-forms) – Framework-agnostic form handling
 
 Visit [OpenSite AI](https://opensite.ai) for more projects and information.
