@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2025-01-04
+
+### Added
+
+- Website extraction hooks backed by Octane endpoints:
+  - `useOpenGraphExtractor`
+  - `useWebsiteSchemaExtractor`
+  - `useWebsiteLinksExtractor`
+  - `useWebsiteMetaExtractor`
+  - `useWebsiteRssExtractor`
+- Shared extractor infrastructure:
+  - `useWebsiteExtractorBase` for debounced, cached, SSR-safe fetching
+  - `websiteExtractorService` for consistent request building
+  - `websiteExtractorTypes` for standardized meta/error types
+- New docs for each extractor hook with usage patterns and API details.
+- Full test coverage for all new extractor hooks.
+
+### Changed
+
+- Expanded package exports to include the new extractor hooks and shared
+  website extractor utilities.
+
 ## [2.0.0] - 2025-01-04
 
 ### Breaking Changes

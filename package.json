@@ -1,6 +1,6 @@
 {
   "name": "@opensite/hooks",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Performance-first React hooks for UI state, storage, events, and responsive behavior with tree-shakable exports.",
   "keywords": [
     "react",
@@ -93,6 +93,11 @@
       "require": "./dist/core/useMediaQuery.cjs",
       "types": "./dist/core/useMediaQuery.d.ts"
     },
+    "./useOpenGraphExtractor": {
+      "import": "./dist/core/useOpenGraphExtractor.js",
+      "require": "./dist/core/useOpenGraphExtractor.cjs",
+      "types": "./dist/core/useOpenGraphExtractor.d.ts"
+    },
     "./useOnClickOutside": {
       "import": "./dist/core/useOnClickOutside.js",
       "require": "./dist/core/useOnClickOutside.cjs",
@@ -117,6 +122,36 @@
       "import": "./dist/core/useThrottle.js",
       "require": "./dist/core/useThrottle.cjs",
       "types": "./dist/core/useThrottle.d.ts"
+    },
+    "./useWebsiteSchemaExtractor": {
+      "import": "./dist/core/useWebsiteSchemaExtractor.js",
+      "require": "./dist/core/useWebsiteSchemaExtractor.cjs",
+      "types": "./dist/core/useWebsiteSchemaExtractor.d.ts"
+    },
+    "./useWebsiteLinksExtractor": {
+      "import": "./dist/core/useWebsiteLinksExtractor.js",
+      "require": "./dist/core/useWebsiteLinksExtractor.cjs",
+      "types": "./dist/core/useWebsiteLinksExtractor.d.ts"
+    },
+    "./useWebsiteMetaExtractor": {
+      "import": "./dist/core/useWebsiteMetaExtractor.js",
+      "require": "./dist/core/useWebsiteMetaExtractor.cjs",
+      "types": "./dist/core/useWebsiteMetaExtractor.d.ts"
+    },
+    "./useWebsiteRssExtractor": {
+      "import": "./dist/core/useWebsiteRssExtractor.js",
+      "require": "./dist/core/useWebsiteRssExtractor.cjs",
+      "types": "./dist/core/useWebsiteRssExtractor.d.ts"
+    },
+    "./websiteExtractorService": {
+      "import": "./dist/core/websiteExtractorService.js",
+      "require": "./dist/core/websiteExtractorService.cjs",
+      "types": "./dist/core/websiteExtractorService.d.ts"
+    },
+    "./websiteExtractorTypes": {
+      "import": "./dist/core/websiteExtractorTypes.js",
+      "require": "./dist/core/websiteExtractorTypes.cjs",
+      "types": "./dist/core/websiteExtractorTypes.d.ts"
     }
   },
   "scripts": {

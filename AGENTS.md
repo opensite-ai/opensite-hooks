@@ -73,6 +73,47 @@ When in doubt, favor: **(1) SSR/hydration safety, (2) tree-shakeability + bundle
 
 ## 4. Hook categories and patterns
 
+### 4.6 Website extractor hooks (revenue-critical)
+
+These hooks are specialized wrappers around Octane extract endpoints and are
+expected to become a revenue center once API key tracking is enabled. Treat them
+as product-critical.
+
+**Hooks**
+- `useOpenGraphExtractor`
+- `useWebsiteSchemaExtractor`
+- `useWebsiteLinksExtractor`
+- `useWebsiteMetaExtractor`
+- `useWebsiteRssExtractor`
+
+**Shared infrastructure**
+- `src/core/useWebsiteExtractorBase.ts` (shared engine)
+- `src/core/websiteExtractorService.ts` (request builder + fetch)
+- `src/core/websiteExtractorTypes.ts` (shared types + defaults)
+
+**Contract rules**
+1. **Never fetch on the server.** These hooks must remain SSR-safe and only
+   execute in the browser (`useIsClient` guard).
+2. **Always debounce network calls.** Use the shared base hook so we avoid
+   request storms and infinite re-render loops.
+3. **Preserve response metadata.** The `meta` block (cache + body size info)
+   must be surfaced for analytics and request tracking.
+4. **Handle errors gracefully.** Upstream errors are expected; populate
+   `error` with `{ message, status?, raw? }` without throwing.
+5. **Respect caching and refresh.** Default to in-memory caching with a
+   debounced `refresh()` to allow manual re-fetch without spamming the API.
+6. **Keep URL handling consistent.** The only required query param is `url`,
+   but always pass via `URLSearchParams` to support encoded query strings.
+7. **OpenGraph skip patterns.** `useOpenGraphExtractor` must keep the default
+   skip list for known-problem URLs (maps, opentable, etc).
+8. **Base URL override.** Default to `https://octane.buzz`, but allow
+   `baseUrl` for staging and testing.
+
+**If you modify these hooks**
+- Update docs in `docs/` for each hook.
+- Add or adjust tests under `src/core/__tests__/`.
+- Update exports in `src/core/index.ts` and `package.json`.
+
 ### 4.1 State hooks
 **Examples:** `useBoolean`, `useMap`, `usePrevious`
 
