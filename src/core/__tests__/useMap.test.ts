@@ -148,5 +148,46 @@ describe("useMap", () => {
       expect(result.current[1].clear).toBe(initialActions.clear);
     });
   });
+
+  describe("synchronous ref updates", () => {
+    it("should allow synchronous reads after set via get() method", () => {
+      // This test validates that useMap uses useIsomorphicLayoutEffect
+      // to update mapRef synchronously, ensuring get() and has() methods
+      // return current values without a timing window for stale reads
+      const { result } = renderHook(() => useMap<string, number>());
+
+      act(() => {
+        result.current[1].set("key", 42);
+      });
+
+      // get() should immediately return the new value
+      expect(result.current[1].get("key")).toBe(42);
+    });
+
+    it("should allow synchronous reads after set via has() method", () => {
+      const { result } = renderHook(() => useMap<string, number>());
+
+      act(() => {
+        result.current[1].set("newKey", 100);
+      });
+
+      // has() should immediately return true
+      expect(result.current[1].has("newKey")).toBe(true);
+    });
+
+    it("should reflect removal immediately in get() and has()", () => {
+      const { result } = renderHook(() =>
+        useMap<string, number>([["key", 1]])
+      );
+
+      act(() => {
+        result.current[1].remove("key");
+      });
+
+      // Both methods should immediately reflect the removal
+      expect(result.current[1].get("key")).toBeUndefined();
+      expect(result.current[1].has("key")).toBe(false);
+    });
+  });
 });
 

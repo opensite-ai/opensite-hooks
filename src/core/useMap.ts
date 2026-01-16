@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect.js";
 
 export interface MapActions<K, V> {
   set: (key: K, value: V) => void;
@@ -24,7 +25,10 @@ export function useMap<K, V>(
 
   const mapRef = useRef(map);
 
-  useEffect(() => {
+  // Use useIsomorphicLayoutEffect to update mapRef synchronously with state
+  // This ensures get() and has() methods always read the current map state
+  // without a timing window where they could return stale values
+  useIsomorphicLayoutEffect(() => {
     mapRef.current = map;
   }, [map]);
 

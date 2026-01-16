@@ -15,7 +15,7 @@ A hook that uses `useLayoutEffect` on the client and `useEffect` on the server f
 ### Basic Example
 
 ```typescript
-import { useIsomorphicLayoutEffect } from '@opensite/hooks';
+import { useIsomorphicLayoutEffect } from '@opensite/hooks/useIsomorphicLayoutEffect';
 
 function Component() {
   const ref = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ function Component() {
 
 ```typescript
 import { useState, useRef } from 'react';
-import { useIsomorphicLayoutEffect } from '@opensite/hooks';
+import { useIsomorphicLayoutEffect } from '@opensite/hooks/useIsomorphicLayoutEffect';
 
 function ResponsiveComponent() {
   const [width, setWidth] = useState(0);
@@ -61,7 +61,7 @@ function ResponsiveComponent() {
 
 ```typescript
 import { useRef } from 'react';
-import { useIsomorphicLayoutEffect } from '@opensite/hooks';
+import { useIsomorphicLayoutEffect } from '@opensite/hooks/useIsomorphicLayoutEffect';
 
 function ScrollToTop() {
   useIsomorphicLayoutEffect(() => {
@@ -77,7 +77,7 @@ function ScrollToTop() {
 
 ```typescript
 import { useRef } from 'react';
-import { useIsomorphicLayoutEffect } from '@opensite/hooks';
+import { useIsomorphicLayoutEffect } from '@opensite/hooks/useIsomorphicLayoutEffect';
 
 function AnimatedComponent() {
   const elementRef = useRef<HTMLDivElement>(null);

@@ -16,7 +16,7 @@ A hook for debouncing state values with configurable delay and options.
 
 ```typescript
 import { useState } from 'react';
-import { useDebounceValue } from '@opensite/hooks';
+import { useDebounceValue } from '@opensite/hooks/useDebounceValue';
 
 function SearchComponent() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,7 +44,7 @@ function SearchComponent() {
 
 ```typescript
 import { useState } from 'react';
-import { useDebounceValue } from '@opensite/hooks';
+import { useDebounceValue } from '@opensite/hooks/useDebounceValue';
 
 function FilteredList({ items }: { items: string[] }) {
   const [filter, setFilter] = useState('');
@@ -75,7 +75,7 @@ function FilteredList({ items }: { items: string[] }) {
 
 ```typescript
 import { useState, useEffect } from 'react';
-import { useDebounceValue } from '@opensite/hooks';
+import { useDebounceValue } from '@opensite/hooks/useDebounceValue';
 
 function UserSearch() {
   const [username, setUsername] = useState('');
@@ -107,7 +107,7 @@ function UserSearch() {
 
 ```typescript
 import { useState } from 'react';
-import { useDebounceValue } from '@opensite/hooks';
+import { useDebounceValue } from '@opensite/hooks/useDebounceValue';
 
 function FormField() {
   const [value, setValue] = useState('');

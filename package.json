@@ -1,6 +1,6 @@
 {
   "name": "@opensite/hooks",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Performance-first React hooks for UI state, storage, events, and responsive behavior with tree-shakable exports.",
   "keywords": [
     "react",

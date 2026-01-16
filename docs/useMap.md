@@ -15,7 +15,7 @@ A hook for managing Map state with convenient helper methods.
 ### Basic Example
 
 ```typescript
-import { useMap } from '@opensite/hooks';
+import { useMap } from '@opensite/hooks/useMap';
 
 function UserList() {
   const [users, actions] = useMap<string, { name: string; age: number }>();
@@ -43,7 +43,7 @@ function UserList() {
 ### Initial State Example
 
 ```typescript
-import { useMap } from '@opensite/hooks';
+import { useMap } from '@opensite/hooks/useMap';
 
 function ProductCatalog() {
   const [products, actions] = useMap<string, number>([
@@ -68,7 +68,7 @@ function ProductCatalog() {
 ### Cache Management Example
 
 ```typescript
-import { useMap } from '@opensite/hooks';
+import { useMap } from '@opensite/hooks/useMap';
 
 function DataCache() {
   const [cache, actions] = useMap<string, any>();
@@ -99,7 +99,7 @@ function DataCache() {
 ### Form Fields Example
 
 ```typescript
-import { useMap } from '@opensite/hooks';
+import { useMap } from '@opensite/hooks/useMap';
 
 function DynamicForm() {
   const [fields, actions] = useMap<string, string>();
@@ -133,7 +133,7 @@ function DynamicForm() {
 ### Bulk Operations Example
 
 ```typescript
-import { useMap } from '@opensite/hooks';
+import { useMap } from '@opensite/hooks/useMap';
 
 function BulkUpdate() {
   const [items, actions] = useMap<number, string>();

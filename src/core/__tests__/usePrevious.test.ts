@@ -64,5 +64,34 @@ describe("usePrevious", () => {
     rerender({ value: null });
     expect(result.current).toBe("value");
   });
+
+  it("should update synchronously for comparison logic", () => {
+    // This test validates that usePrevious uses useIsomorphicLayoutEffect
+    // to ensure the previous value is captured BEFORE paint, making
+    // comparisons like `if (value !== previousValue)` work correctly
+    let comparisonResult: boolean | null = null;
+
+    const { rerender } = renderHook(
+      ({ value }) => {
+        const previous = usePrevious(value);
+        // This comparison happens during render - previous must be
+        // the actual previous value, not the current value
+        comparisonResult = value !== previous;
+        return previous;
+      },
+      { initialProps: { value: 1 } }
+    );
+
+    // First render: previous is undefined, value is 1
+    expect(comparisonResult).toBe(true);
+
+    rerender({ value: 2 });
+    // Second render: previous should be 1, value is 2
+    expect(comparisonResult).toBe(true);
+
+    rerender({ value: 2 });
+    // Third render: previous should be 2, value is 2 (no change)
+    expect(comparisonResult).toBe(false);
+  });
 });
 

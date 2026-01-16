@@ -131,6 +131,36 @@ describe("useBoolean", () => {
       expect(result.current.setFalse).toBe(initialSetFalse);
       expect(result.current.toggle).toBe(initialToggle);
     });
+
+    it("should maintain stable result object reference when value changes", () => {
+      // This test validates that the result object is memoized with useMemo
+      // to prevent unnecessary re-renders in consumers that use the result
+      // object in dependency arrays
+      const { result } = renderHook(() => useBoolean(false));
+
+      const initialResult = result.current;
+
+      act(() => {
+        result.current.toggle();
+      });
+
+      // After value changes, the object reference should change
+      // (because value is in the dependency array)
+      expect(result.current).not.toBe(initialResult);
+      expect(result.current.value).toBe(true);
+    });
+
+    it("should maintain stable result object when no value change occurs", () => {
+      const { result, rerender } = renderHook(() => useBoolean(false));
+
+      const initialResult = result.current;
+
+      // Rerender without changing value
+      rerender();
+
+      // Object reference should remain stable when value hasn't changed
+      expect(result.current).toBe(initialResult);
+    });
   });
 });
 

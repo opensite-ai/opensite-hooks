@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect.js";
 
 type PossibleRef<T extends HTMLElement> = React.RefObject<T>;
 
@@ -11,7 +12,10 @@ export function useOnClickOutside<T extends HTMLElement>(
 ): void {
   const handlerRef = useRef(handler);
 
-  useEffect(() => {
+  // Use useIsomorphicLayoutEffect to update handler ref synchronously
+  // This prevents stale closures in rapid click scenarios where the event
+  // listener (registered below) might fire before the ref is updated
+  useIsomorphicLayoutEffect(() => {
     handlerRef.current = handler;
   }, [handler]);
 

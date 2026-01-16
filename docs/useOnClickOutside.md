@@ -16,7 +16,7 @@ A hook for detecting clicks outside of specified element(s).
 
 ```typescript
 import { useRef } from 'react';
-import { useOnClickOutside } from '@opensite/hooks';
+import { useOnClickOutside } from '@opensite/hooks/useOnClickOutside';
 
 function Dropdown() {
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -47,7 +47,7 @@ function Dropdown() {
 
 ```typescript
 import { useRef } from 'react';
-import { useOnClickOutside } from '@opensite/hooks';
+import { useOnClickOutside } from '@opensite/hooks/useOnClickOutside';
 
 function Modal({ onClose }) {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -70,7 +70,7 @@ function Modal({ onClose }) {
 
 ```typescript
 import { useRef } from 'react';
-import { useOnClickOutside } from '@opensite/hooks';
+import { useOnClickOutside } from '@opensite/hooks/useOnClickOutside';
 
 function Toolbar() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -101,7 +101,7 @@ function Toolbar() {
 
 ```typescript
 import { useRef } from 'react';
-import { useOnClickOutside } from '@opensite/hooks';
+import { useOnClickOutside } from '@opensite/hooks/useOnClickOutside';
 
 function ContextMenu() {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -128,7 +128,7 @@ function ContextMenu() {
 
 ```typescript
 import { useRef } from 'react';
-import { useOnClickOutside } from '@opensite/hooks';
+import { useOnClickOutside } from '@opensite/hooks/useOnClickOutside';
 
 function MobileMenu() {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -156,7 +156,7 @@ function MobileMenu() {
 
 ```typescript
 import { useRef } from 'react';
-import { useOnClickOutside } from '@opensite/hooks';
+import { useOnClickOutside } from '@opensite/hooks/useOnClickOutside';
 
 function Popover({ trigger, content }) {
   const popoverRef = useRef<HTMLDivElement>(null);

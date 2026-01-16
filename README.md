@@ -40,17 +40,9 @@ yarn add @opensite/hooks
 
 ## Quick Start
 
-### Barrel Import
+### Direct Import (Recommended)
 
-Import multiple hooks from the main entry point:
-
-```typescript
-import { useBoolean, useLocalStorage, useMediaQuery } from '@opensite/hooks';
-```
-
-### Direct Import (Recommended for Bundle Size)
-
-Import individual hooks for optimal tree-shaking:
+Import individual hooks for optimal tree-shaking and minimal bundle size:
 
 ```typescript
 import { useBoolean } from '@opensite/hooks/useBoolean';
@@ -58,7 +50,18 @@ import { useLocalStorage } from '@opensite/hooks/useLocalStorage';
 import { useMediaQuery } from '@opensite/hooks/useMediaQuery';
 ```
 
+### Barrel Import (Not Recommended)
+
+While supported, barrel imports increase bundle size and should be avoided in production:
+
+```typescript
+// ⚠️ AVOID: Imports entire library, defeats tree-shaking
+import { useBoolean, useLocalStorage, useMediaQuery } from '@opensite/hooks';
+```
+
 ### CDN Usage (UMD)
+
+For legacy browser environments only:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@opensite/hooks/dist/browser/opensite-hooks.umd.js"></script>
@@ -182,7 +185,7 @@ Version 2.0.0 simplifies import paths. Update your imports:
 + import { useBoolean } from '@opensite/hooks/useBoolean';
 ```
 
-The `/core/*` and `/hooks/*` paths have been removed. Use flat paths (`/useBoolean`) or barrel imports (`@opensite/hooks`) instead.
+The `/core/*` and `/hooks/*` paths have been removed. Use flat paths (`/useBoolean`) for optimal tree-shaking.
 
 ## TypeScript
 

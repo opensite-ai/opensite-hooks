@@ -15,7 +15,7 @@ A hook for detecting if code is running on the client-side (browser) or server-s
 ### Basic Example
 
 ```typescript
-import { useIsClient } from '@opensite/hooks';
+import { useIsClient } from '@opensite/hooks/useIsClient';
 
 function ClientOnlyComponent() {
   const isClient = useIsClient();
@@ -31,7 +31,7 @@ function ClientOnlyComponent() {
 ### Browser API Example
 
 ```typescript
-import { useIsClient } from '@opensite/hooks';
+import { useIsClient } from '@opensite/hooks/useIsClient';
 
 function GeolocationComponent() {
   const isClient = useIsClient();
@@ -59,7 +59,7 @@ function GeolocationComponent() {
 ### Local Storage Example
 
 ```typescript
-import { useIsClient } from '@opensite/hooks';
+import { useIsClient } from '@opensite/hooks/useIsClient';
 
 function UserPreferences() {
   const isClient = useIsClient();
@@ -93,7 +93,7 @@ function UserPreferences() {
 ### Conditional Script Loading
 
 ```typescript
-import { useIsClient } from '@opensite/hooks';
+import { useIsClient } from '@opensite/hooks/useIsClient';
 
 function AnalyticsComponent() {
   const isClient = useIsClient();
