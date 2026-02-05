@@ -17,6 +17,9 @@ export { useOnClickOutside } from "./useOnClickOutside.js";
 export { useMediaQuery } from "./useMediaQuery.js";
 export type { UseMediaQueryOptions } from "./useMediaQuery.js";
 
+export { usePlatformFromUrl } from "./usePlatformFromUrl.js";
+export type { SocialPlatformName } from "./usePlatformFromUrl.js";
+
 export { useEventListener } from "./useEventListener.js";
 
 export { useIsClient } from "./useIsClient.js";

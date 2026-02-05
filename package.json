@@ -1,6 +1,6 @@
 {
   "name": "@opensite/hooks",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Performance-first React hooks for UI state, storage, events, and responsive behavior with tree-shakable exports.",
   "keywords": [
     "react",
@@ -102,6 +102,11 @@
       "import": "./dist/core/useOnClickOutside.js",
       "require": "./dist/core/useOnClickOutside.cjs",
       "types": "./dist/core/useOnClickOutside.d.ts"
+    },
+    "./usePlatformFromUrl": {
+      "import": "./dist/core/usePlatformFromUrl.js",
+      "require": "./dist/core/usePlatformFromUrl.cjs",
+      "types": "./dist/core/usePlatformFromUrl.d.ts"
     },
     "./usePrevious": {
       "import": "./dist/core/usePrevious.js",

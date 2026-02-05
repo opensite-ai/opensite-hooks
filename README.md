@@ -94,6 +94,7 @@ For legacy browser environments only:
 | [`useMediaQuery`](./docs/useMediaQuery.md) | Reactive CSS media query matching | [View](./docs/useMediaQuery.md) |
 | **Utilities** | | |
 | [`useCopyToClipboard`](./docs/useCopyToClipboard.md) | Copy text to clipboard with feedback state | [View](./docs/useCopyToClipboard.md) |
+| [`usePlatformFromUrl`](./docs/usePlatformFromUrl.md) | Resolve a social platform name from a URL | [View](./docs/usePlatformFromUrl.md) |
 | [`useIsClient`](./docs/useIsClient.md) | Detect client-side vs server-side rendering | [View](./docs/useIsClient.md) |
 | [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) | SSR-safe useLayoutEffect | [View](./docs/useIsomorphicLayoutEffect.md) |
 
