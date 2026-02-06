@@ -97,6 +97,12 @@ For legacy browser environments only:
 | [`usePlatformFromUrl`](./docs/usePlatformFromUrl.md) | Resolve a social platform name from a URL | [View](./docs/usePlatformFromUrl.md) |
 | [`useIsClient`](./docs/useIsClient.md) | Detect client-side vs server-side rendering | [View](./docs/useIsClient.md) |
 | [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) | SSR-safe useLayoutEffect | [View](./docs/useIsomorphicLayoutEffect.md) |
+| **Website Extractors** | | |
+| [`useOpenGraphExtractor`](./docs/useOpenGraphExtractor.md) | Fetch and normalize Open Graph data with debouncing and caching | [View](./docs/useOpenGraphExtractor.md) |
+| [`useWebsiteSchemaExtractor`](./docs/useWebsiteSchemaExtractor.md) | Extract Schema.org data from a website | [View](./docs/useWebsiteSchemaExtractor.md) |
+| [`useWebsiteLinksExtractor`](./docs/useWebsiteLinksExtractor.md) | Extract outbound and internal link data from a webpage | [View](./docs/useWebsiteLinksExtractor.md) |
+| [`useWebsiteMetaExtractor`](./docs/useWebsiteMetaExtractor.md) | Extract title, description, and meta tags from a webpage | [View](./docs/useWebsiteMetaExtractor.md) |
+| [`useWebsiteRssExtractor`](./docs/useWebsiteRssExtractor.md) | Extract RSS feed information from a website | [View](./docs/useWebsiteRssExtractor.md) |
 
 ## Examples
 

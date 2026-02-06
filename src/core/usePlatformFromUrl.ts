@@ -32,6 +32,8 @@ export type SocialPlatformName =
   | "npmjs"
   | "crates"
   | "rubygems"
+  | "behance"
+  | "dribbble"
   | "unknown";
 
 /**
@@ -231,6 +233,18 @@ const PLATFORM_HOSTNAME_MAP = new Map<string, SocialPlatformName>([
   // RubyGems
   ["rubygems.org", "rubygems"],
   ["www.rubygems.org", "rubygems"],
+
+  // Behance
+  ["behance.net", "behance"],
+  ["www.behance.net", "behance"],
+  // Optional: catch common subdomains if you see them in your data
+  ["portfolio.behance.net", "behance"],
+  ["mir-s3-cdn-cf.behance.net", "behance"],
+
+  // Dribbble
+  ["dribbble.com", "dribbble"],
+  ["www.dribbble.com", "dribbble"],
+  ["drbl.in", "dribbble"],
 ]);
 
 /**
@@ -293,6 +307,9 @@ export function usePlatformFromUrl(url: string): SocialPlatformName {
       }
       if (hostname.endsWith(".medium.com")) {
         return "medium";
+      }
+      if (hostname.endsWith(".behance.net")) {
+        return "behance";
       }
 
       return "unknown";
