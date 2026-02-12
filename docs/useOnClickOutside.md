@@ -187,7 +187,7 @@ function Popover({ trigger, content }) {
 
 1. `ref`: Single ref or array of refs to elements
 2. `handler`: Callback function when click occurs outside
-3. `eventType` (optional): Event type to listen for. Options: `'mousedown'`, `'mouseup'`, `'click'`, `'touchstart'`, `'pointerdown'`. Defaults to `'mousedown'`.
+3. `eventType` (optional): Event type to listen for. Options: `'mousedown'`, `'mouseup'`, `'click'`, `'touchstart'`, `'pointerdown'`. Defaults to `'pointerdown'` (falls back to `'mousedown'` when Pointer Events are unavailable).
 4. `options` (optional): AddEventListenerOptions or boolean for capture phase
 
 ### Return Value
@@ -215,4 +215,3 @@ function useOnClickOutside<T extends HTMLElement>(
 - Autocomplete suggestions
 - Date pickers
 - Color pickers
-

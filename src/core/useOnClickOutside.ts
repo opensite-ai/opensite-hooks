@@ -6,8 +6,7 @@ type PossibleRef<T extends HTMLElement> = React.RefObject<T>;
 export function useOnClickOutside<T extends HTMLElement>(
   ref: PossibleRef<T> | Array<PossibleRef<T>>,
   handler: (event: MouseEvent | TouchEvent | PointerEvent) => void,
-  eventType: "mousedown" | "mouseup" | "click" | "touchstart" | "pointerdown" =
-    "mousedown",
+  eventType?: "mousedown" | "mouseup" | "click" | "touchstart" | "pointerdown",
   options?: AddEventListenerOptions | boolean
 ): void {
   const handlerRef = useRef(handler);
@@ -23,6 +22,12 @@ export function useOnClickOutside<T extends HTMLElement>(
     if (typeof document === "undefined") {
       return;
     }
+
+    const supportsPointerEvents =
+      typeof window !== "undefined" &&
+      typeof window.PointerEvent !== "undefined";
+    const resolvedEventType =
+      eventType ?? (supportsPointerEvents ? "pointerdown" : "mousedown");
 
     const refs = Array.isArray(ref) ? ref : [ref];
     const listener = (event: MouseEvent | TouchEvent | PointerEvent) => {
@@ -41,9 +46,9 @@ export function useOnClickOutside<T extends HTMLElement>(
       }
     };
 
-    document.addEventListener(eventType, listener, options);
+    document.addEventListener(resolvedEventType, listener, options);
     return () => {
-      document.removeEventListener(eventType, listener, options);
+      document.removeEventListener(resolvedEventType, listener, options);
     };
   }, [eventType, options, ref]);
 }

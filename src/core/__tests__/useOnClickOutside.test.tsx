@@ -3,13 +3,15 @@ import { describe, it, expect, vi } from "vitest";
 import { useRef } from "react";
 import { useOnClickOutside } from "../useOnClickOutside.js";
 
+type OutsideEventType = "mousedown" | "mouseup" | "click" | "touchstart" | "pointerdown";
+
 // Test component that uses the hook
 function TestComponent({
   onClickOutside,
-  eventType = "mousedown" as const,
+  eventType,
 }: {
   onClickOutside: () => void;
-  eventType?: "mousedown" | "mouseup" | "click" | "touchstart" | "pointerdown";
+  eventType?: OutsideEventType;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, onClickOutside, eventType);
@@ -30,7 +32,7 @@ describe("useOnClickOutside", () => {
       const handler = vi.fn();
       const { getByTestId } = render(<TestComponent onClickOutside={handler} />);
 
-      fireEvent.mouseDown(getByTestId("outside"));
+      fireEvent.pointerDown(getByTestId("outside"));
 
       expect(handler).toHaveBeenCalledTimes(1);
     });
@@ -39,7 +41,7 @@ describe("useOnClickOutside", () => {
       const handler = vi.fn();
       const { getByTestId } = render(<TestComponent onClickOutside={handler} />);
 
-      fireEvent.mouseDown(getByTestId("inside"));
+      fireEvent.pointerDown(getByTestId("inside"));
 
       expect(handler).not.toHaveBeenCalled();
     });
@@ -48,13 +50,85 @@ describe("useOnClickOutside", () => {
       const handler = vi.fn();
       const { getByTestId } = render(<TestComponent onClickOutside={handler} />);
 
-      fireEvent.mouseDown(getByTestId("inside"));
+      fireEvent.pointerDown(getByTestId("inside"));
 
       expect(handler).not.toHaveBeenCalled();
     });
   });
 
+  describe("default event selection", () => {
+    it("should register pointerdown by default when PointerEvent is available", () => {
+      const addEventListenerSpy = vi.spyOn(document, "addEventListener");
+      const removeEventListenerSpy = vi.spyOn(document, "removeEventListener");
+      const handler = vi.fn();
+
+      try {
+        const { unmount } = render(<TestComponent onClickOutside={handler} />);
+
+        expect(addEventListenerSpy).toHaveBeenCalledWith(
+          "pointerdown",
+          expect.any(Function),
+          undefined
+        );
+
+        unmount();
+
+        expect(removeEventListenerSpy).toHaveBeenCalledWith(
+          "pointerdown",
+          expect.any(Function),
+          undefined
+        );
+      } finally {
+        addEventListenerSpy.mockRestore();
+        removeEventListenerSpy.mockRestore();
+      }
+    });
+
+    it("should fall back to mousedown when PointerEvent is unavailable", () => {
+      const pointerEventDescriptor = Object.getOwnPropertyDescriptor(
+        window,
+        "PointerEvent"
+      );
+      const addEventListenerSpy = vi.spyOn(document, "addEventListener");
+      const handler = vi.fn();
+
+      try {
+        Object.defineProperty(window, "PointerEvent", {
+          configurable: true,
+          writable: true,
+          value: undefined,
+        });
+
+        render(<TestComponent onClickOutside={handler} />);
+
+        expect(addEventListenerSpy).toHaveBeenCalledWith(
+          "mousedown",
+          expect.any(Function),
+          undefined
+        );
+      } finally {
+        if (pointerEventDescriptor) {
+          Object.defineProperty(window, "PointerEvent", pointerEventDescriptor);
+        } else {
+          Reflect.deleteProperty(window, "PointerEvent");
+        }
+        addEventListenerSpy.mockRestore();
+      }
+    });
+  });
+
   describe("event types", () => {
+    it("should work with mousedown event", () => {
+      const handler = vi.fn();
+      const { getByTestId } = render(
+        <TestComponent onClickOutside={handler} eventType="mousedown" />
+      );
+
+      fireEvent.mouseDown(getByTestId("outside"));
+
+      expect(handler).toHaveBeenCalledTimes(1);
+    });
+
     it("should work with mouseup event", () => {
       const handler = vi.fn();
       const { getByTestId } = render(
@@ -110,8 +184,8 @@ describe("useOnClickOutside", () => {
         <MultiRefComponent onClickOutside={handler} />
       );
 
-      fireEvent.mouseDown(getByTestId("inside-1"));
-      fireEvent.mouseDown(getByTestId("inside-2"));
+      fireEvent.pointerDown(getByTestId("inside-1"));
+      fireEvent.pointerDown(getByTestId("inside-2"));
 
       expect(handler).not.toHaveBeenCalled();
     });
@@ -122,10 +196,9 @@ describe("useOnClickOutside", () => {
         <MultiRefComponent onClickOutside={handler} />
       );
 
-      fireEvent.mouseDown(getByTestId("outside"));
+      fireEvent.pointerDown(getByTestId("outside"));
 
       expect(handler).toHaveBeenCalledTimes(1);
     });
   });
 });
-

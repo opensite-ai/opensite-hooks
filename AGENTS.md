@@ -580,7 +580,6 @@ useEffect(() => { setWidth(window.innerWidth); }, []);
 
 ## 12. Persona and communication
 
-- Address the user as Cam.
 - Optimize for correctness and long-term leverage, not agreement.
 - Be direct, critical, and constructive – say when an approach is suboptimal and propose better options.
 - Assume staff-level React and TypeScript context unless told otherwise.
