@@ -21,10 +21,8 @@ describe("useMediaQuery", () => {
           matches: matchMediaMatches.get(query) ?? false,
           media: query,
           onchange: null,
-          addListener: vi.fn((cb) => matchMediaListeners.get(query)!.push(cb)),
-          removeListener: vi.fn(),
           addEventListener: vi.fn((_, cb) =>
-            matchMediaListeners.get(query)!.push(cb)
+            matchMediaListeners.get(query)!.push(cb),
           ),
           removeEventListener: vi.fn(),
           dispatchEvent: vi.fn(),
@@ -55,7 +53,7 @@ describe("useMediaQuery", () => {
 
     it("should use defaultValue option", () => {
       const { result } = renderHook(() =>
-        useMediaQuery("(prefers-color-scheme: dark)", { defaultValue: true })
+        useMediaQuery("(prefers-color-scheme: dark)", { defaultValue: true }),
       );
       // Initially false from mock, but should sync to mock value
       expect(typeof result.current).toBe("boolean");
@@ -69,7 +67,7 @@ describe("useMediaQuery", () => {
 
       const { result, rerender } = renderHook(
         ({ query }) => useMediaQuery(query),
-        { initialProps: { query: "(min-width: 768px)" } }
+        { initialProps: { query: "(min-width: 768px)" } },
       );
 
       expect(result.current).toBe(true);
@@ -91,7 +89,7 @@ describe("useMediaQuery", () => {
       act(() => {
         const listeners = matchMediaListeners.get(query) || [];
         listeners.forEach((listener) =>
-          listener({ matches: true, media: query } as MediaQueryListEvent)
+          listener({ matches: true, media: query } as MediaQueryListEvent),
         );
       });
 
@@ -104,7 +102,7 @@ describe("useMediaQuery", () => {
       matchMediaMatches.set("(prefers-color-scheme: dark)", true);
 
       const { result } = renderHook(() =>
-        useMediaQuery("(prefers-color-scheme: dark)")
+        useMediaQuery("(prefers-color-scheme: dark)"),
       );
       expect(result.current).toBe(true);
     });
@@ -114,10 +112,10 @@ describe("useMediaQuery", () => {
       matchMediaMatches.set("(min-width: 1280px)", false);
 
       const { result: smResult } = renderHook(() =>
-        useMediaQuery("(min-width: 640px)")
+        useMediaQuery("(min-width: 640px)"),
       );
       const { result: xlResult } = renderHook(() =>
-        useMediaQuery("(min-width: 1280px)")
+        useMediaQuery("(min-width: 1280px)"),
       );
 
       expect(smResult.current).toBe(true);
@@ -125,4 +123,3 @@ describe("useMediaQuery", () => {
     });
   });
 });
-

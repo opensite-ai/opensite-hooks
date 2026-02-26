@@ -6,17 +6,23 @@ export interface UseMediaQueryOptions {
 
 export function useMediaQuery(
   query: string,
-  options: UseMediaQueryOptions = {}
+  options: UseMediaQueryOptions = {},
 ): boolean {
   const [matches, setMatches] = useState<boolean>(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    if (
+      typeof window === "undefined" ||
+      typeof window.matchMedia !== "function"
+    ) {
       return options.defaultValue ?? false;
     }
     return window.matchMedia(query).matches;
   });
 
   useEffect(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    if (
+      typeof window === "undefined" ||
+      typeof window.matchMedia !== "function"
+    ) {
       return;
     }
 
@@ -27,13 +33,8 @@ export function useMediaQuery(
 
     setMatches(mediaQueryList.matches);
 
-    if (mediaQueryList.addEventListener) {
-      mediaQueryList.addEventListener("change", handler);
-      return () => mediaQueryList.removeEventListener("change", handler);
-    }
-
-    mediaQueryList.addListener(handler);
-    return () => mediaQueryList.removeListener(handler);
+    mediaQueryList.addEventListener("change", handler);
+    return () => mediaQueryList.removeEventListener("change", handler);
   }, [query]);
 
   return matches;

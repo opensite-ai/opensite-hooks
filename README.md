@@ -92,10 +92,12 @@ For legacy browser environments only:
 | [`useResizeObserver`](./docs/useResizeObserver.md) | Observe element size changes | [View](./docs/useResizeObserver.md) |
 | **Responsive** | | |
 | [`useMediaQuery`](./docs/useMediaQuery.md) | Reactive CSS media query matching | [View](./docs/useMediaQuery.md) |
+| [`useScreen`](./docs/useScreen.md) | Viewport dimensions with Tailwind breakpoint and screen type detection | [View](./docs/useScreen.md) |
 | **Utilities** | | |
 | [`useCopyToClipboard`](./docs/useCopyToClipboard.md) | Copy text to clipboard with feedback state | [View](./docs/useCopyToClipboard.md) |
 | [`usePlatformFromUrl`](./docs/usePlatformFromUrl.md) | Resolve a social platform name from a URL | [View](./docs/usePlatformFromUrl.md) |
 | [`useIsClient`](./docs/useIsClient.md) | Detect client-side vs server-side rendering | [View](./docs/useIsClient.md) |
+| [`useIsTouchDevice`](./docs/useIsTouchDevice.md) | Detect touch-primary input with dynamic hybrid device updates | [View](./docs/useIsTouchDevice.md) |
 | [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) | SSR-safe useLayoutEffect | [View](./docs/useIsomorphicLayoutEffect.md) |
 | **Website Extractors** | | |
 | [`useOpenGraphExtractor`](./docs/useOpenGraphExtractor.md) | Fetch and normalize Open Graph data with debouncing and caching | [View](./docs/useOpenGraphExtractor.md) |

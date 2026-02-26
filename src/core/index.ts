@@ -2,7 +2,10 @@ export { useBoolean } from "./useBoolean.js";
 export type { UseBooleanResult } from "./useBoolean.js";
 
 export { useDebounceCallback } from "./useDebounceCallback.js";
-export type { DebounceOptions, DebouncedCallback } from "./useDebounceCallback.js";
+export type {
+  DebounceOptions,
+  DebouncedCallback,
+} from "./useDebounceCallback.js";
 
 export { useDebounceValue } from "./useDebounceValue.js";
 
@@ -82,6 +85,23 @@ export type {
   WebsiteRssPayload,
   WebsiteRssResponse,
 } from "./useWebsiteRssExtractor.js";
+
+export { useIsTouchDevice } from "./useIsTouchDevice.js";
+export type {
+  DeviceType,
+  UseIsTouchDeviceOptions,
+  UseIsTouchDeviceResult,
+} from "./useIsTouchDevice.js";
+
+export { useScreen } from "./useScreen.js";
+export type {
+  ScreenBreakpoints,
+  ScreenType,
+  ScreenTypeMapping,
+  TailwindSize,
+  UseScreenOptions,
+  UseScreenResult,
+} from "./useScreen.js";
 
 export { fetchWebsiteExtractor } from "./websiteExtractorService.js";
 export { buildWebsiteExtractorUrl } from "./websiteExtractorService.js";

@@ -5,6 +5,55 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-02-26
+
+### Added
+
+- **`useIsTouchDevice`** – Detect whether the device's primary input mechanism is touch-based.
+  - Two-tier detection strategy: CSS Interaction Media Features (`pointer: coarse`, `hover: none`) with legacy touch-API fallback (`ontouchstart`, `maxTouchPoints`)
+  - Dynamic updates via `matchMedia` change events for hybrid/convertible devices (tablets with keyboards, foldables)
+  - Returns `deviceType` (`"unknown"` | `"touch"` | `"desktop"`) and convenience `isTouchDevice` boolean
+  - Imperative `recheck()` callback for on-demand re-evaluation
+  - SSR-safe with configurable `defaultDeviceType` option
+  - Memoized return object for stable references
+  - Full TypeScript support with exported types: `DeviceType`, `UseIsTouchDeviceOptions`, `UseIsTouchDeviceResult`
+
+- **`useScreen`** – Track viewport dimensions and compute Tailwind CSS breakpoint / semantic screen type.
+  - Real-time `width` and `height` tracking via resize events
+  - `tailwindSize` returns exact Tailwind v4 breakpoint: `"default"` | `"sm"` | `"md"` | `"lg"` | `"xl"` | `"2xl"`
+  - `screenType` returns semantic classification: `"UNKNOWN"` | `"MOBILE"` | `"TABLET"` | `"DESKTOP"`
+  - Default mapping: `default`/`sm` → MOBILE, `md` → TABLET, `lg`/`xl`/`2xl` → DESKTOP
+  - Built on `useMediaQuery` for efficient breakpoint detection via CSS media queries
+  - Customizable breakpoint thresholds via `options.breakpoints`
+  - Customizable screen type mapping via `options.screenTypeMapping`
+  - Imperative `refresh()` callback for on-demand dimension re-measurement
+  - SSR-safe with configurable `defaultScreenType` and `defaultTailwindSize` options
+  - Memoized return object for stable references
+  - Full TypeScript support with exported types: `TailwindSize`, `ScreenType`, `ScreenBreakpoints`, `ScreenTypeMapping`, `UseScreenOptions`, `UseScreenResult`
+
+- New documentation for both hooks in `docs/` with comprehensive usage examples and API reference.
+- Full test coverage for both new hooks (46 new tests total).
+
+### Changed
+
+- **`useMediaQuery`** – Removed deprecated `addListener`/`removeListener` fallback for Safari ≤13.
+  - Now uses standard `addEventListener("change", ...)` / `removeEventListener("change", ...)` exclusively
+  - Safari 14+ (September 2020) and all other modern browsers support the standard EventTarget API
+  - This aligns with the library's React 17+ requirement (October 2020)
+
+- **Test infrastructure** – Removed deprecated `addListener`/`removeListener` mocks from:
+  - `src/test/setup.ts` (global test setup)
+  - `src/core/__tests__/useMediaQuery.test.ts`
+  - `src/core/__tests__/useIsTouchDevice.test.ts`
+
+### Package Updates
+
+- Added flat export paths for new hooks:
+  - `@opensite/hooks/useIsTouchDevice`
+  - `@opensite/hooks/useScreen`
+- Updated barrel exports in `src/core/index.ts` with all new hooks and types.
+- Test count increased from 170 to 198.
+
 ## [2.0.1] - 2025-01-04
 
 ### Added

@@ -1,6 +1,6 @@
 {
   "name": "@opensite/hooks",
-  "version": "2.0.8",
+  "version": "2.1.0",
   "description": "Performance-first React hooks for UI state, storage, events, and responsive behavior with tree-shakable exports.",
   "keywords": [
     "react",
@@ -73,6 +73,11 @@
       "require": "./dist/core/useIsClient.cjs",
       "types": "./dist/core/useIsClient.d.ts"
     },
+    "./useIsTouchDevice": {
+      "import": "./dist/core/useIsTouchDevice.js",
+      "require": "./dist/core/useIsTouchDevice.cjs",
+      "types": "./dist/core/useIsTouchDevice.d.ts"
+    },
     "./useIsomorphicLayoutEffect": {
       "import": "./dist/core/useIsomorphicLayoutEffect.js",
       "require": "./dist/core/useIsomorphicLayoutEffect.cjs",
@@ -117,6 +122,11 @@
       "import": "./dist/core/useResizeObserver.js",
       "require": "./dist/core/useResizeObserver.cjs",
       "types": "./dist/core/useResizeObserver.d.ts"
+    },
+    "./useScreen": {
+      "import": "./dist/core/useScreen.js",
+      "require": "./dist/core/useScreen.cjs",
+      "types": "./dist/core/useScreen.d.ts"
     },
     "./useSessionStorage": {
       "import": "./dist/core/useSessionStorage.js",
