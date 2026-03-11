@@ -324,7 +324,7 @@ pnpm test:ui          # Run tests with Vitest UI
 ### 8.3 Test file structure
 
 | Path | Purpose |
-|------|---------|
+| ------ | --------- |
 | `src/core/__tests__/` | All hook test files live here |
 | `src/test/setup.ts` | Global test setup with browser API mocks |
 | `src/test/utils.tsx` | Shared test utilities and helpers |
@@ -526,6 +526,7 @@ If any of these cannot be completed, clearly note what was skipped and why in th
 ### 11.1 Stale closure in event handlers
 
 **Wrong:**
+
 ```typescript
 useEffect(() => {
   const listener = () => handler(value); // `value` is captured, goes stale
@@ -535,6 +536,7 @@ useEffect(() => {
 ```
 
 **Correct:**
+
 ```typescript
 const handlerRef = useRef(handler);
 useIsomorphicLayoutEffect(() => { handlerRef.current = handler; }, [handler]);
@@ -549,6 +551,7 @@ useEffect(() => {
 ### 11.2 Memory leaks from uncleared timers
 
 **Wrong:**
+
 ```typescript
 useEffect(() => {
   setTimeout(() => setDone(true), 1000);
@@ -556,6 +559,7 @@ useEffect(() => {
 ```
 
 **Correct:**
+
 ```typescript
 useEffect(() => {
   const id = setTimeout(() => setDone(true), 1000);
@@ -566,11 +570,13 @@ useEffect(() => {
 ### 11.3 Hydration mismatch from non-deterministic initial state
 
 **Wrong:**
+
 ```typescript
 const [width] = useState(window.innerWidth); // Crashes on server, mismatches on client
 ```
 
 **Correct:**
+
 ```typescript
 const [width, setWidth] = useState(0);
 useEffect(() => { setWidth(window.innerWidth); }, []);
