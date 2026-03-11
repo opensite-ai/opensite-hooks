@@ -1,8 +1,8 @@
-![Opensite AI Utility Hooks](https://octane.cdn.ing/api/v1/images/transform?url=https://cdn.ing/assets/i/r/285728/knsbi168qz1imlat2aq042c10rw8/opensite-react-hooks.png&q=90&f=webp)
-
 # @opensite/hooks
 
-Performance-first React hooks for UI state, storage, events, and responsive behavior.
+## Performance-first React hooks for UI state, storage, events, and responsive behavior. Used throughout the [OpenSite AI platform](https://opensite.ai).
+
+![Opensite AI Utility Hooks](https://octane.cdn.ing/api/v1/images/transform?url=https://cdn.ing/assets/i/r/285728/knsbi168qz1imlat2aq042c10rw8/opensite-react-hooks.png&f=webp)
 
 [![npm version](https://img.shields.io/npm/v/@opensite/hooks.svg)](https://www.npmjs.com/package/@opensite/hooks)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@opensite/hooks)](https://bundlephobia.com/package/@opensite/hooks)
